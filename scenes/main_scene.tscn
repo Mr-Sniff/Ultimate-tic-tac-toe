@@ -1,0 +1,71 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctjen8tix4j6i"]
+
+[ext_resource type="Script" uid="uid://14bjj6m4qlpi" path="res://scenes/main_board.gd" id="1_pw63i"]
+[ext_resource type="PackedScene" uid="uid://jog0m0uxrpo3" path="res://scenes/subgrid.tscn" id="1_w2twt"]
+[ext_resource type="Texture2D" uid="uid://dtgjspqca8yk3" path="res://icon.svg" id="4_pu3yx"]
+
+[node name="main_scene" type="Node2D" node_paths=PackedStringArray("subgrids") groups=["main_board"]]
+script = ExtResource("1_pw63i")
+subgrids = [NodePath("subgrid"), NodePath("subgrid2"), NodePath("subgrid3"), NodePath("subgrid4"), NodePath("subgrid5"), NodePath("subgrid6"), NodePath("subgrid7"), NodePath("subgrid8"), NodePath("subgrid9")]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="subgrid" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-485, -485)
+id = 1
+
+[node name="subgrid2" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-150, -485)
+id = 2
+
+[node name="subgrid3" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(185, -485)
+id = 3
+
+[node name="subgrid4" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-485, -150)
+id = 4
+
+[node name="subgrid5" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-150, -150)
+id = 5
+
+[node name="subgrid6" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(185, -150)
+id = 6
+
+[node name="subgrid7" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-485, 185)
+id = 7
+
+[node name="subgrid8" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(-150, 185)
+id = 8
+
+[node name="subgrid9" parent="." instance=ExtResource("1_w2twt")]
+position = Vector2(185, 185)
+id = 9
+
+[node name="cross" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.18039216, 0.5137255, 1, 0.78431374)
+custom_minimum_size = Vector2(900, 900)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pu3yx")
+expand_mode = 2
+
+[node name="circle" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.9843137, 0, 0.33333334, 0.78431374)
+custom_minimum_size = Vector2(900, 900)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_pu3yx")
+expand_mode = 2

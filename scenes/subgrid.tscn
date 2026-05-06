@@ -1,0 +1,86 @@
+[gd_scene load_steps=6 format=3 uid="uid://jog0m0uxrpo3"]
+
+[ext_resource type="Script" uid="uid://uwyd6dee7ojc" path="res://scripts/subgrid.gd" id="1_0e581"]
+[ext_resource type="PackedScene" uid="uid://liisgagosabv" path="res://scenes/cell.tscn" id="1_s76d4"]
+[ext_resource type="Texture2D" uid="uid://dtgjspqca8yk3" path="res://icon.svg" id="3_tf7sl"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0e581"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_tf7sl"]
+Panel/styles/panel = SubResource("StyleBoxFlat_0e581")
+
+[node name="subgrid" type="Node2D" node_paths=PackedStringArray("cells")]
+script = ExtResource("1_0e581")
+cells = [NodePath("cell"), NodePath("cell2"), NodePath("cell3"), NodePath("cell4"), NodePath("cell5"), NodePath("cell6"), NodePath("cell7"), NodePath("cell8"), NodePath("cell9")]
+
+[node name="cell" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(50, 50)
+id = 1
+
+[node name="cell2" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(150, 50)
+id = 2
+
+[node name="cell3" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(250, 50)
+id = 3
+
+[node name="cell4" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(50, 150)
+id = 4
+
+[node name="cell5" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(150, 150)
+id = 5
+
+[node name="cell6" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(250, 150)
+id = 6
+
+[node name="cell7" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(50, 250)
+id = 7
+
+[node name="cell8" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(150, 250)
+id = 8
+
+[node name="cell9" parent="." instance=ExtResource("1_s76d4")]
+position = Vector2(250, 250)
+id = 9
+
+[node name="overlay" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.35686275)
+custom_minimum_size = Vector2(300, 300)
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+theme = SubResource("Theme_tf7sl")
+
+[node name="cross" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.18039216, 0.5137255, 1, 0.78431374)
+custom_minimum_size = Vector2(280, 280)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 290.0
+texture = ExtResource("3_tf7sl")
+expand_mode = 2
+
+[node name="circle" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.9843137, 0, 0.33333334, 0.78431374)
+custom_minimum_size = Vector2(280, 280)
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 290.0
+offset_bottom = 290.0
+texture = ExtResource("3_tf7sl")
+expand_mode = 2

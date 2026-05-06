@@ -1,0 +1,71 @@
+[gd_scene load_steps=5 format=3 uid="uid://liisgagosabv"]
+
+[ext_resource type="Script" uid="uid://c1wj68wl3jvo0" path="res://scripts/cell.gd" id="1_yh0nt"]
+[ext_resource type="Theme" uid="uid://drq6a4bpcx2oc" path="res://theme.tres" id="2_gwrgs"]
+[ext_resource type="Texture2D" uid="uid://dtgjspqca8yk3" path="res://icon.svg" id="3_nm02e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_14hpr"]
+size = Vector2(100, 100)
+
+[node name="cell" type="Node2D"]
+script = ExtResource("1_yh0nt")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_14hpr")
+
+[node name="ColorRect" type="Panel" parent="."]
+custom_minimum_size = Vector2(100, 100)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -50.0
+offset_right = 50.0
+offset_bottom = 50.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme = ExtResource("2_gwrgs")
+
+[node name="cross" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.18208957, 0.51409715, 1, 1)
+custom_minimum_size = Vector2(90, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nm02e")
+expand_mode = 2
+
+[node name="circle" type="TextureRect" parent="."]
+visible = false
+modulate = Color(0.9835805, 0, 0.3320256, 1)
+custom_minimum_size = Vector2(90, 90)
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_nm02e")
+expand_mode = 2
+
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
